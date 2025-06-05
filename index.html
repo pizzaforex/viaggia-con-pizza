@@ -181,7 +181,7 @@
             <div class="text-center mb-10">
                 <a href="https://www.airbnb.it/rooms/692503741106484571" target="_blank" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-indigo-700 transition">Visita l'annuncio completo</a>
             </div>
-            <div x-data="{ photos: ['https://i.imgur.com/B7quCzz.jpg', 'https://i.imgur.com/lYtpTtX.jpg', 'https://i.imgur.com/bP1rQ2o.jpg', 'https://i.imgur.com/EAhGPlo.jpg', 'https://i.imgur.com/BZ1Zt5w.jpg', 'https://a0.muscache.com/im/pictures/miso/Hosting-692503741106484571/original/eefb49d6-2cd5-4a96-9872-81b533cb4f3f.jpeg?im_w=720&quality=70&auto=webp'], current: 0 }" class="mb-10">
+            <div x-data="{ photos: ['https://i.imgur.com/B7quCzz.jpg', 'https://i.imgur.com/lYtpTtX.jpg', 'https://i.imgur.com/bP1rQ2o.jpg', 'https://i.imgur.com/EAhGPlo.jpg', 'https://i.imgur.com/BZ1Zt5w.jpg', 'https://a0.muscache.com/im/pictures/miso/Hosting-692503741106484571/original/eefb49d6-2cd5-4a96-9872-81b533cb4f3f.jpeg?im_w=720&amp;quality=70&amp;auto=webp'], current: 0 }" class="mb-10">
                 <div class="relative mb-6 h-64">
                     <img :src="photos[current]" alt="Foto appartamento" class="w-full h-full object-cover rounded-xl shadow-md">
                     <button @click="current = (current - 1 + photos.length) % photos.length" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 px-3 py-2 rounded-full">
@@ -282,43 +282,43 @@
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Franš+Belgrade" target="_blank">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Franš+Belgrade" target="_blank">
                         <img src="https://picsum.photos/seed/frans/600/400" alt="Ristorante Franš" class="w-full h-40 object-cover">
                     </a>
                     <div class="p-6">
                         <h3 class="text-lg font-bold mb-2">Franš</h3>
                         <p class="text-gray-600">Cucina serba raffinata &ndash; 1,7 km dall'appartamento.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Franš+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Franš+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Lorenzo+%26+Kakalamba+Belgrade" target="_blank">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Lorenzo+%26+Kakalamba+Belgrade" target="_blank">
                         <img src="https://picsum.photos/seed/lorenzo/600/400" alt="Lorenzo &amp; Kakalamba" class="w-full h-40 object-cover">
                     </a>
                     <div class="p-6">
                         <h3 class="text-lg font-bold mb-2">Lorenzo &amp; Kakalamba</h3>
                         <p class="text-gray-600">Fusion italo-balcanica &ndash; 1,9 km di distanza.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Lorenzo+%26+Kakalamba+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Lorenzo+%26+Kakalamba+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Kafeterija+Magazin+1907+Belgrade" target="_blank">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Kafeterija+Magazin+1907+Belgrade" target="_blank">
                         <img src="https://picsum.photos/seed/kafeterija/600/400" alt="Kafeterija Magazin 1907" class="w-full h-40 object-cover">
                     </a>
                     <div class="p-6">
                         <h3 class="text-lg font-bold mb-2">Kafeterija Magazin 1907</h3>
                         <p class="text-gray-600">Specialty coffee per iniziare la giornata &ndash; ~1 km.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Kafeterija+Magazin+1907+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Kafeterija+Magazin+1907+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
                     </div>
                 </div>
                 <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
-                    <a href="https://www.google.com/maps/search/?api=1&query=Pržionica+D59B+Belgrade" target="_blank">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Pržionica+D59B+Belgrade" target="_blank">
                         <img src="https://picsum.photos/seed/przionica/600/400" alt="Pržionica D59B" class="w-full h-40 object-cover">
                     </a>
                     <div class="p-6">
                         <h3 class="text-lg font-bold mb-2">Pržionica D59B</h3>
                         <p class="text-gray-600">Torrefazione hipster &ndash; 3,6 km dall'alloggio.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Pržionica+D59B+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Pržionica+D59B+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
                     </div>
                 </div>
             </div>
@@ -342,10 +342,10 @@
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tutte le tappe principali della nostra avventura a portata di click.</p>
             </div>
             <div class="relative" style="padding-bottom: 56.25%; height: 0;">
-                <iframe src="https://maps.google.com/maps?q=President+Apartman+Spa+Belgrade&hl=it&z=14&output=embed" class="absolute top-0 left-0 w-full h-full rounded-xl shadow-md" allowfullscreen loading="lazy"></iframe>
+                <iframe src="https://maps.google.com/maps?q=President+Apartman+Spa+Belgrade&amp;hl=it&amp;z=14&amp;output=embed" class="absolute top-0 left-0 w-full h-full rounded-xl shadow-md" allowfullscreen loading="lazy"></iframe>
             </div>
             <p class="text-center mt-4">
-                <a href="https://www.google.com/maps/search/?api=1&query=President+Apartman+Spa+Belgrade" target="_blank" class="text-indigo-600 underline font-semibold">Apri su Google Maps</a>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=President+Apartman+Spa+Belgrade" target="_blank" class="text-indigo-600 underline font-semibold">Apri su Google Maps</a>
             </p>
         </div>
     </section>
