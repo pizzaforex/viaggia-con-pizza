@@ -173,12 +173,29 @@
                     Vivremo al <a href="https://www.airbnb.it/rooms/692503741106484571" target="_blank" class="text-indigo-600 underline font-semibold">President Apartman Spa</a>: vasca idromassaggio, sauna privata e ambienti luminosi dove lavorare in pace.
                 </p>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <img src="https://i.imgur.com/B7quCzz.jpg" alt="Vasca idromassaggio con sauna sullo sfondo" class="rounded-xl shadow-md">
-                <img src="https://i.imgur.com/lYtpTtX.jpg" alt="Sauna con vista salotto" class="rounded-xl shadow-md">
-                <img src="https://i.imgur.com/bP1rQ2o.jpg" alt="Il salotto dell'appartamento" class="rounded-xl shadow-md">
-                <img src="https://i.imgur.com/EAhGPlo.jpg" alt="Camera da letto accogliente" class="rounded-xl shadow-md">
-                <img src="https://i.imgur.com/BZ1Zt5w.jpg" alt="Cucina moderna e funzionale" class="rounded-xl shadow-md">
+            <ul class="text-left text-gray-600 list-disc list-inside mb-6">
+                <li>★4.82 su Airbnb – 1 camera, 2 letti e 1 bagno</li>
+                <li>Wi-Fi in fibra ottica e scrivania per due</li>
+                <li>Zona Vračar a 1,5 km dal Tempio di San Sava</li>
+            </ul>
+            <div class="text-center mb-10">
+                <a href="https://www.airbnb.it/rooms/692503741106484571" target="_blank" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-indigo-700 transition">Visita l'annuncio completo</a>
+            </div>
+                <div x-data="{ photos: ['https://i.imgur.com/B7quCzz.jpg', 'https://i.imgur.com/lYtpTtX.jpg', 'https://i.imgur.com/bP1rQ2o.jpg', 'https://i.imgur.com/EAhGPlo.jpg', 'https://i.imgur.com/BZ1Zt5w.jpg', 'https://a0.muscache.com/im/pictures/miso/Hosting-692503741106484571/original/eefb49d6-2cd5-4a96-9872-81b533cb4f3f.jpeg?im_w=720&amp;quality=70&amp;auto=webp'], current: 0 }" class="mb-10">
+                <div class="relative mb-6 h-64">
+                    <img x-bind:src="photos[current]" alt="Foto appartamento" class="w-full h-full object-cover rounded-xl shadow-md">
+                    <button x-on:click="current = (current - 1 + photos.length) % photos.length" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 px-3 py-2 rounded-full">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button x-on:click="current = (current + 1) % photos.length" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white text-gray-800 px-3 py-2 rounded-full">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="grid grid-cols-3 sm:grid-cols-6 gap-4">
+                    <template x-for="(photo, index) in photos" x-bind:key="index">
+                        <img x-bind:src="photo" x-on:click="current = index" class="cursor-pointer rounded-lg shadow">
+                    </template>
+                </div>
             </div>
         </div>
     </section>
@@ -255,6 +272,83 @@
         </div>
     </section>
 
+    <!-- Food & Activities Section -->
+
+    <section id="dintorni" class="py-20 bg-gradient-to-r from-yellow-50 to-red-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Sapori & Dintorni</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Ristoranti tipici e cafè consigliati attorno al nostro alloggio.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Franš+Belgrade" target="_blank">
+                        <img src="https://picsum.photos/seed/frans/600/400" alt="Ristorante Franš" class="w-full h-40 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2">Franš</h3>
+                        <p class="text-gray-600">Cucina serba raffinata &ndash; 1,7 km dall'appartamento.</p>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Franš+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Lorenzo+%26+Kakalamba+Belgrade" target="_blank">
+                        <img src="https://picsum.photos/seed/lorenzo/600/400" alt="Lorenzo &amp; Kakalamba" class="w-full h-40 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2">Lorenzo &amp; Kakalamba</h3>
+                        <p class="text-gray-600">Fusion italo-balcanica &ndash; 1,9 km di distanza.</p>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Lorenzo+%26+Kakalamba+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Kafeterija+Magazin+1907+Belgrade" target="_blank">
+                        <img src="https://picsum.photos/seed/kafeterija/600/400" alt="Kafeterija Magazin 1907" class="w-full h-40 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2">Kafeterija Magazin 1907</h3>
+                        <p class="text-gray-600">Specialty coffee per iniziare la giornata &ndash; ~1 km.</p>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Kafeterija+Magazin+1907+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=Pržionica+D59B+Belgrade" target="_blank">
+                        <img src="https://picsum.photos/seed/przionica/600/400" alt="Pržionica D59B" class="w-full h-40 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2">Pržionica D59B</h3>
+                        <p class="text-gray-600">Torrefazione hipster &ndash; 3,6 km dall'alloggio.</p>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=Pržionica+D59B+Belgrade" target="_blank" class="text-indigo-600 underline text-sm">Apri su Google Maps</a>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Distanze Principali</h3>
+                <ul class="list-disc list-inside text-gray-600">
+                    <li>Tempio di San Sava &ndash; 1,5 km</li>
+                    <li>Knez Mihailova &ndash; 3,4 km</li>
+                    <li>Ristorante Franš &ndash; 1,7 km</li>
+                    <li>Lorenzo &amp; Kakalamba &ndash; 1,9 km</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section id="mappa" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Mappa Interattiva</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tutte le tappe principali della nostra avventura a portata di click.</p>
+            </div>
+            <div class="relative" style="padding-bottom: 56.25%; height: 0;">
+                <iframe src="https://maps.google.com/maps?q=President+Apartman+Spa+Belgrade&amp;hl=it&amp;z=14&amp;output=embed" class="absolute top-0 left-0 w-full h-full rounded-xl shadow-md" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <p class="text-center mt-4">
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=President+Apartman+Spa+Belgrade" target="_blank" class="text-indigo-600 underline font-semibold">Apri su Google Maps</a>
+            </p>
+        </div>
+    </section>
     <!-- Pricing Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
@@ -266,13 +360,13 @@
             <div class="max-w-4xl mx-auto" x-data="{ activeTab: 'aereo' }">
                 <div class="flex justify-center mb-8">
                     <div class="bg-gray-100 p-1 rounded-full">
-                        <button @click="activeTab = 'aereo'" 
-                                :class="activeTab === 'aereo' ? 'bg-white shadow-md' : ''"
+                        <button x-on:click="activeTab = 'aereo'"
+                                x-bind:class="activeTab === 'aereo' ? 'bg-white shadow-md' : ''"
                                 class="px-6 py-3 rounded-full font-semibold transition-all duration-300">
                             <i class="fas fa-plane mr-2" aria-hidden="true"></i>Sky Business Class
                         </button>
-                        <button @click="activeTab = 'auto'" 
-                                :class="activeTab === 'auto' ? 'bg-white shadow-md' : ''"
+                        <button x-on:click="activeTab = 'auto'"
+                                x-bind:class="activeTab === 'auto' ? 'bg-white shadow-md' : ''"
                                 class="px-6 py-3 rounded-full font-semibold transition-all duration-300">
                             <i class="fas fa-car mr-2" aria-hidden="true"></i>Road Work Trip
                         </button>
@@ -352,15 +446,15 @@
             
             <div class="max-w-3xl mx-auto space-y-4" x-data="{ activeAccordion: null }">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button @click="activeAccordion = activeAccordion === 1 ? null : 1" 
+                    <button x-on:click="activeAccordion = activeAccordion === 1 ? null : 1"
                             class="w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <h3 class="text-lg font-semibold text-gray-800">Parmi: "Ma funziona il Wi-Fi per lavorare?" 💻</h3>
-                            <i class="fas fa-chevron-down transform transition-transform duration-200" 
-                               :class="activeAccordion === 1 ? 'rotate-180' : ''"></i>
+                            <i class="fas fa-chevron-down transform transition-transform duration-200"
+                               x-bind:class="activeAccordion === 1 ? 'rotate-180' : ''"></i>
                         </div>
                     </button>
-                    <div class="accordion-content" :class="activeAccordion === 1 ? 'active' : ''">
+                    <div class="accordion-content" x-bind:class="activeAccordion === 1 ? 'active' : ''">
                         <div class="p-6 pt-0 text-gray-600">
                             Parmi, tranquilla! L'apartman ha fibra ottica velocissima (ho controllato 3 volte). Serbia ha una delle connessioni internet più veloci d'Europa. Le tue call saranno perfette, e se non funziona... ehm, colpa del fuso orario! 😅 Plus: scrivania per due, così possiamo fare pair programming della vita!
                         </div>
@@ -368,15 +462,15 @@
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button @click="activeAccordion = activeAccordion === 2 ? null : 2" 
+                    <button x-on:click="activeAccordion = activeAccordion === 2 ? null : 2"
                             class="w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <h3 class="text-lg font-semibold text-gray-800">Parmi: "E se litighiamo H24 per 11 giorni?" 😅</h3>
-                            <i class="fas fa-chevron-down transform transition-transform duration-200" 
-                               :class="activeAccordion === 2 ? 'rotate-180' : ''"></i>
+                            <i class="fas fa-chevron-down transform transition-transform duration-200"
+                               x-bind:class="activeAccordion === 2 ? 'rotate-180' : ''"></i>
                         </div>
                     </button>
-                    <div class="accordion-content" :class="activeAccordion === 2 ? 'active' : ''">
+                    <div class="accordion-content" x-bind:class="activeAccordion === 2 ? 'active' : ''">
                         <div class="p-6 pt-0 text-gray-600">
                             Ottima domanda Parmi! Ho un piano: spa nell'apartman per il relax, Danubio per le passeggiate riconciliatrici, e se tutto fallisce... i čevapi risolvono qualsiasi crisi di coppia (scientificamente provato). Plus: se sopravviviamo a questa convivenza intensiva, siamo pronti per tutto! Consider it a stress test della relazione. 💪❤️
                         </div>
@@ -384,15 +478,15 @@
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button @click="activeAccordion = activeAccordion === 3 ? null : 3" 
+                    <button x-on:click="activeAccordion = activeAccordion === 3 ? null : 3"
                             class="w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <h3 class="text-lg font-semibold text-gray-800">Parmi: "Ma Pizza, sei sicuro di aver pianificato tutto?" 🤔</h3>
-                            <i class="fas fa-chevron-down transform transition-transform duration-200" 
-                               :class="activeAccordion === 3 ? 'rotate-180' : ''"></i>
+                            <i class="fas fa-chevron-down transform transition-transform duration-200"
+                               x-bind:class="activeAccordion === 3 ? 'rotate-180' : ''"></i>
                         </div>
                     </button>
-                    <div class="accordion-content" :class="activeAccordion === 3 ? 'active' : ''">
+                    <div class="accordion-content" x-bind:class="activeAccordion === 3 ? 'active' : ''">
                         <div class="p-6 pt-0 text-gray-600">
                             Parmi, ho fatto più ricerche per questo viaggio che per la mia tesi di laurea! Ho spreadsheet, backup plans, e backup dei backup plans. Apartman prenotato ✓, voli controllati ✓, ristoranti salvati su Maps ✓, itinerari ottimizzati ✓. L'unica cosa che non posso prevedere è se riuscirò a non russare. Ma per quello... well, c'è la spa! 😴✨
                         </div>
@@ -400,15 +494,15 @@
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <button @click="activeAccordion = activeAccordion === 4 ? null : 4" 
+                    <button x-on:click="activeAccordion = activeAccordion === 4 ? null : 4"
                             class="w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <h3 class="text-lg font-semibold text-gray-800">Parmi: "This is not just a vacation, vero?" 💼</h3>
-                            <i class="fas fa-chevron-down transform transition-transform duration-200" 
-                               :class="activeAccordion === 4 ? 'rotate-180' : ''"></i>
+                            <i class="fas fa-chevron-down transform transition-transform duration-200"
+                               x-bind:class="activeAccordion === 4 ? 'rotate-180' : ''"></i>
                         </div>
                     </button>
-                    <div class="accordion-content" :class="activeAccordion === 4 ? 'active' : ''">
+                    <div class="accordion-content" x-bind:class="activeAccordion === 4 ? 'active' : ''">
                         <div class="p-6 pt-0 text-gray-600">
                             Exactly, Parmi! È un'esperienza completa: workation + relationship test + business trip + romantic getaway + cultural immersion. Basically un MBA accelerato sulla vita di coppia con specializzazione in Balcani. Se funziona questo setup, possiamo conquistare il mondo (o almeno l'Europa dell'Est) insieme! Think of it as our proof of concept per il futuro. 🚀💕
                         </div>
