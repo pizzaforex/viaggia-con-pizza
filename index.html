@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pizza & Parmi | Le Nostre Workation</title>
-  <meta name="description" content="Dashboard delle avventure workation di Pizza & Parmi: scopri Belgrado, Vietnam e le prossime destinazioni!"/>
+  <title>Pizza & Parmi | La Dashboard delle Avventure</title>
+  <meta name="description" content="La dashboard delle avventure workation di Pizza & Parmi. Esplora i viaggi passati, pianifica quelli futuri e sogna nuove destinazioni."/>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js" defer></script>
@@ -12,10 +12,10 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
 
-    .hero-gradient {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    .vietnam-gradient {
+        background: linear-gradient(135deg, #0d9488 0%, #065f46 100%);
     }
 
     .card-hover {
@@ -24,7 +24,7 @@
 
     .card-hover:hover {
       transform: translateY(-8px);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
     }
 
     .floating-elements {
@@ -38,115 +38,308 @@
     .floating-circle {
       position: absolute;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      animation: float 6s ease-in-out infinite;
+      background: rgba(255, 255, 255, 0.08);
+      animation: float 8s ease-in-out infinite;
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50%     { transform: translateY(-20px) rotate(180deg); }
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+      50%     { transform: translateY(-25px) rotate(180deg) scale(1.05); }
     }
 
     .pulse-button {
       animation: pulse 2s infinite;
-      box-shadow: 0 0 0 0 rgba(103, 126, 234, 0.7);
     }
 
     @keyframes pulse {
-      0%   { box-shadow: 0 0 0 0 rgba(103, 126, 234, 0.7); }
-      70%  { box-shadow: 0 0 0 10px rgba(103, 126, 234, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(103, 126, 234, 0); }
+      0%   { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+      70%  { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+    }
+    
+    /* Stili per la timeline */
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -31px;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        border: 2px solid #14b8a6; /* Teal */
+        background-color: white;
+        border-radius: 50%;
+        z-index: 1;
     }
   </style>
 </head>
-<body class="bg-gray-50">
+<body x-data="adventureDashboard()">
 
   <!-- HERO -->
-  <section class="hero-gradient text-white relative min-h-screen flex items-center justify-center text-center">
+  <section class="vietnam-gradient text-white relative min-h-screen flex items-center justify-center text-center overflow-hidden">
     <div class="floating-elements">
-      <div class="floating-circle w-16 h-16 top-24 left-10" style="animation-delay: 1s;"></div>
-      <div class="floating-circle w-24 h-24 top-1/2 right-16" style="animation-delay: 3s;"></div>
-      <div class="floating-circle w-10 h-10 bottom-24 left-1/3" style="animation-delay: 2s;"></div>
+      <div class="floating-circle w-20 h-20 top-24 left-10" style="animation-delay: 1s;"></div>
+      <div class="floating-circle w-32 h-32 top-1/2 right-16" style="animation-delay: 3s;"></div>
+      <div class="floating-circle w-12 h-12 bottom-24 left-1/3" style="animation-delay: 2s;"></div>
+      <div class="floating-circle w-16 h-16 bottom-16 right-1/4" style="animation-delay: 4s;"></div>
     </div>
     <div class="relative z-10 px-6">
       <div class="mb-6">
-        <i class="fas fa-globe-europe text-6xl text-white drop-shadow"></i>
+        <i class="fas fa-plane-departure text-6xl text-amber-300 drop-shadow-lg"></i>
       </div>
       <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-xl">
         Pizza & Parmi
-        <span class="block text-3xl md:text-4xl font-light text-pink-200 mt-2">Workation Experience</span>
+        <span class="block text-3xl md:text-4xl font-light text-emerald-200 mt-2">Adventure Dashboard</span>
       </h1>
-      <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-        Dall’amore in Serbia ai noodle in Vietnam: le nostre avventure di coppia tra smart working, street food e co-living ❤️💻
+      <p class="text-xl text-slate-200 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Il nostro quartier generale per trasformare le idee in ricordi. <br class="hidden sm:block"> Qui tracciamo le avventure passate, pianifichiamo quelle future e sogniamo le prossime mete.
       </p>
-      <button onclick="document.getElementById('destinazioni').scrollIntoView({behavior: 'smooth'})" class="pulse-button bg-white text-indigo-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-md">
-        <i class="fas fa-arrow-down mr-2"></i>
-        Scopri le destinazioni
+      <button @click="document.getElementById('destinazioni').scrollIntoView({behavior: 'smooth'})" class="pulse-button bg-white text-teal-700 font-bold px-8 py-4 rounded-full hover:bg-slate-100 transition transform hover:scale-105 shadow-xl text-lg">
+        <i class="fas fa-map-signs mr-2"></i>
+        Esplora le Avventure
       </button>
     </div>
   </section>
+  
+  <!-- STATS -->
+  <section class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800">La Nostra Dashboard</h2>
+            <p class="text-xl text-gray-600 mt-2">I numeri delle nostre esplorazioni globali.</p>
+          </div>
+          <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                  <div class="text-teal-600 text-5xl font-bold" x-text="stats.completed"></div>
+                  <div class="text-gray-500 mt-2 font-medium">Avventure Completate</div>
+              </div>
+              <div>
+                  <div class="text-amber-600 text-5xl font-bold" x-text="stats.countries"></div>
+                  <div class="text-gray-500 mt-2 font-medium">Paesi Visitati</div>
+              </div>
+              <div>
+                  <div class="text-rose-600 text-5xl font-bold" x-text="stats.planned"></div>
+                  <div class="text-gray-500 mt-2 font-medium">Avventure Future</div>
+              </div>
+               <div>
+                  <div class="text-indigo-600 text-5xl font-bold" x-text="stats.ideas"></div>
+                  <div class="text-gray-500 mt-2 font-medium">Idee nel Cassetto</div>
+              </div>
+          </div>
+      </div>
+  </section>
 
   <!-- DESTINAZIONI -->
-  <section id="destinazioni" class="py-20 bg-white">
+  <section id="destinazioni" class="py-20 bg-slate-50">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Le Nostre Workation</h2>
-        <p class="text-xl text-gray-600">Esplora i viaggi di Pizza & Parmi 🤍</p>
+        <p class="text-xl text-gray-600 mt-2">Filtra per stato e rivivi ogni momento.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-10">
+      <!-- FILTRI -->
+      <div class="flex justify-center space-x-2 md:space-x-4 mb-12">
+          <button @click="filter = 'all'" :class="filter === 'all' ? 'bg-teal-600 text-white' : 'bg-white text-gray-700 hover:bg-slate-100'" class="px-4 py-2 rounded-full font-semibold transition-all shadow-sm">Tutte</button>
+          <button @click="filter = 'Completata'" :class="filter === 'Completata' ? 'bg-teal-600 text-white' : 'bg-white text-gray-700 hover:bg-slate-100'" class="px-4 py-2 rounded-full font-semibold transition-all shadow-sm">Completate</button>
+          <button @click="filter = 'Pianificata'" :class="filter === 'Pianificata' ? 'bg-teal-600 text-white' : 'bg-white text-gray-700 hover:bg-slate-100'" class="px-4 py-2 rounded-full font-semibold transition-all shadow-sm">Pianificate</button>
+          <button @click="filter = 'Idea'" :class="filter === 'Idea' ? 'bg-teal-600 text-white' : 'bg-white text-gray-700 hover:bg-slate-100'" class="px-4 py-2 rounded-full font-semibold transition-all shadow-sm">Idee</button>
+      </div>
 
-        <!-- BELGRADO -->
-        <div class="card-hover overflow-hidden rounded-2xl shadow-lg group relative">
-          <img src="images/belgrado-hero.jpg" alt="Belgrado" class="w-full h-80 object-cover group-hover:scale-105 transform transition duration-300"/>
-          <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 via-black/30 to-transparent p-6 text-white z-10">
-            <h3 class="text-3xl font-bold mb-1">Belgrado</h3>
-            <p class="text-sm text-gray-200 mb-4">Una startup di convivenza romantica (11 giorni) 🇷🇸</p>
-            <a href="belgrado.html" class="inline-block bg-white text-indigo-600 font-semibold px-5 py-2 rounded-full text-sm hover:bg-indigo-50 transition">
-              <i class="fas fa-heart mr-2"></i> Vai a Belgrado
-            </a>
-          </div>
-        </div>
-
-        <!-- VIETNAM -->
-        <div class="card-hover overflow-hidden rounded-2xl shadow-lg group relative">
-          <img src="images/vietnam-hero.jpg" alt="Vietnam" class="w-full h-80 object-cover group-hover:scale-105 transform transition duration-300"/>
-          <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 via-black/30 to-transparent p-6 text-white z-10">
-            <h3 class="text-3xl font-bold mb-1">Vietnam</h3>
-            <p class="text-sm text-gray-200 mb-4">Street food, co-living e avventura asiatica per 28 giorni 🇻🇳</p>
-            <a href="vietnam.html" class="inline-block bg-white text-indigo-600 font-semibold px-5 py-2 rounded-full text-sm hover:bg-indigo-50 transition">
-              <i class="fas fa-bowl-food mr-2"></i> Vai in Vietnam
-            </a>
-          </div>
-        </div>
+      <!-- GRIGLIA VIAGGI -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <template x-for="trip in filteredTrips()" :key="trip.title">
+            <div class="card-hover overflow-hidden rounded-2xl shadow-lg group relative bg-white flex flex-col">
+              <div class="relative">
+                <img :src="trip.image" :alt="trip.title" class="w-full h-64 object-cover group-hover:scale-105 transform transition duration-300"/>
+                <div class="absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-semibold text-white"
+                     :class="{
+                        'bg-green-500': trip.status === 'Completata',
+                        'bg-amber-500': trip.status === 'Pianificata',
+                        'bg-indigo-500': trip.status === 'Idea'
+                     }"
+                     x-text="trip.status">
+                </div>
+              </div>
+              <div class="p-6 flex-grow flex flex-col">
+                <p class="text-sm text-gray-500" x-text="trip.dates"></p>
+                <h3 class="text-2xl font-bold mb-2 mt-1 text-gray-800" x-text="trip.title + ' ' + trip.countryCode"></h3>
+                <p class="text-gray-600 mb-4 flex-grow" x-text="trip.description"></p>
+                <a :href="trip.link" class="inline-block bg-teal-600 text-white font-semibold px-5 py-2 rounded-full text-center hover:bg-teal-700 transition mt-auto"
+                   :class="{'pointer-events-none bg-slate-300': trip.status === 'Idea'}">
+                  <i class="fas fa-arrow-right mr-2"></i> 
+                  <span x-text="trip.status === 'Idea' ? 'Dettagli da definire' : 'Vai all\'Avventura'"></span>
+                </a>
+              </div>
+            </div>
+        </template>
       </div>
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
-  <section class="py-20 hero-gradient text-white text-center">
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">Pronti per la prossima avventura?</h2>
-      <p class="text-xl text-blue-100 mb-10 max-w-xl mx-auto">Tokyo, Bali, Messico... la prossima workation sarà ancora più epica 🚀</p>
-      <a href="#" class="bg-white text-indigo-600 font-bold px-8 py-4 rounded-full hover:bg-gray-100 transition-all">
-        <i class="fas fa-map-marker-alt mr-2"></i> Suggerisci la prossima destinazione
-      </a>
-    </div>
+  <!-- PROPOSTA NUOVA META -->
+  <section id="proponi" class="py-20 bg-white">
+      <div class="container mx-auto px-6 text-center">
+          <div class="max-w-2xl mx-auto">
+              <i class="fas fa-lightbulb text-5xl text-amber-500 mb-6"></i>
+              <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Proponi la Prossima Meta!</h2>
+              <p class="text-xl text-gray-600 my-6">Hai un'idea geniale per la prossima workation? Aggiungila alla nostra lista dei desideri. Zero commitment, 100% sogni.</p>
+              
+              <form @submit.prevent="addIdea" class="mt-8 bg-slate-50 p-8 rounded-2xl shadow-lg border border-slate-200">
+                  <div class="grid sm:grid-cols-2 gap-6">
+                      <input type="text" x-model="newIdea.title" placeholder="Nome destinazione (es. Tokyo)" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none transition">
+                      <input type="text" x-model="newIdea.countryCode" placeholder="Emoji bandiera (es. 🇯🇵)" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none transition">
+                  </div>
+                  <textarea x-model="newIdea.description" placeholder="Perché dovremmo andarci? (es. Sushi, templi e smart working nel futuro!)" required rows="3" class="w-full mt-6 px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-teal-500 focus:outline-none transition"></textarea>
+                  <button type="submit" class="mt-6 w-full bg-amber-500 text-white font-bold px-8 py-4 rounded-full hover:bg-amber-600 transition-all text-lg transform hover:scale-105">
+                      <i class="fas fa-paper-plane mr-2"></i> Aggiungi alla Wishlist
+                  </button>
+              </form>
+          </div>
+      </div>
+  </section>
+  
+  <!-- TIMELINE -->
+  <section class="py-20 bg-slate-50">
+      <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+              <h2 class="text-4xl md:text-5xl font-bold text-gray-800">La Nostra Storia</h2>
+              <p class="text-xl text-gray-600 mt-2">Come siamo arrivati fin qui, un'avventura alla volta.</p>
+          </div>
+          <div class="max-w-2xl mx-auto">
+              <div class="relative border-l-2 border-slate-200 pl-8 space-y-12">
+                  <div class="timeline-item relative">
+                      <h3 class="text-2xl font-bold text-teal-700">Vietnam - La Prova del 9</h3>
+                      <p class="text-gray-500 font-medium my-1">Agosto 2025 (Pianificata)</p>
+                      <p class="text-gray-600">28 giorni di immersione asiatica. Se superiamo questo, superiamo tutto. Obiettivo: non perdersi tra i vicoli di Hanoi e diventare maestri di Pho.</p>
+                  </div>
+                   <div class="timeline-item relative">
+                      <h3 class="text-2xl font-bold text-teal-700">Belgrado - Il Beta Test</h3>
+                      <p class="text-gray-500 font-medium my-1">Giugno 2024 (Completata)</p>
+                      <p class="text-gray-600">La nostra prima convivenza e workation. 11 giorni che hanno dimostrato che possiamo lavorare fianco a fianco senza ucciderci. Anzi!</p>
+                  </div>
+                   <div class="timeline-item relative">
+                      <h3 class="text-2xl font-bold text-teal-700">L'Inizio - L'Idea</h3>
+                      <p class="text-gray-500 font-medium my-1">2023</p>
+                      <p class="text-gray-600">Nasce il progetto "Pizza & Parmi Go Global". L'obiettivo: unire amore, lavoro e la scoperta del mondo. Il nome era catchy, dovevamo farlo per forza.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-gray-900 text-gray-300 py-12 text-sm">
-    <div class="container mx-auto px-6 text-center">
-      <p class="mb-2">Pizza & Parmi Ventures © <span id="year"></span> – Made with ❤️ for love-powered workations!</p>
-      <p>
-        <a href="https://tenor.com/it/search/cello-marching-band-gifs" target="_blank" class="underline hover:text-white">Non cliccare</a> |
-        <a href="mailto:pizza@pizzaparmi.ventures" class="underline hover:text-white">Contattaci</a>
-      </p>
+  <footer class="bg-slate-900 text-slate-300 py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8 mb-8 text-sm">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-4">Pizza & Parmi Ventures</h3>
+                <p class="text-slate-400">Trasformare relazioni in avventure globali. Specializzati in logistica di coppia e test di street food.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Navigazione</h4>
+                <ul class="space-y-2">
+                    <li><a @click="document.querySelector('body').scrollIntoView({behavior: 'smooth'})" class="cursor-pointer text-slate-400 hover:text-white">Home</a></li>
+                    <li><a @click="document.getElementById('destinazioni').scrollIntoView({behavior: 'smooth'})" class="cursor-pointer text-slate-400 hover:text-white">Le Avventure</a></li>
+                    <li><a @click="document.getElementById('proponi').scrollIntoView({behavior: 'smooth'})" class="cursor-pointer text-slate-400 hover:text-white">Proponi Meta</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Le Nostre Avventure</h4>
+                <ul class="space-y-2 text-slate-400">
+                    <template x-for="trip in trips.filter(t => t.status !== 'Idea')">
+                       <li><a :href="trip.link" class="hover:text-white" x-text="trip.title + ' ' + trip.countryCode"></a></li>
+                    </template>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold text-white mb-4">Contatti</h4>
+                 <ul class="space-y-2 text-slate-400">
+                     <li><i class="fas fa-pizza-slice w-4 mr-2"></i> CEO Pizza: +39 333 PIZZA</li>
+                     <li><i class="fas fa-heart w-4 mr-2"></i> CCO Parmi: +39 333 PARMI</li>
+                     <li><i class="fas fa-envelope w-4 mr-2"></i> Email: <a href="mailto:ceo@pizzaparmi.ventures" class="hover:text-white">ceo@pizzaparmi.ventures</a></li>
+                 </ul>
+            </div>
+        </div>
+        <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400 text-sm">
+            <p>Pizza & Parmi Global Ventures © <span x-text="new Date().getFullYear()"></span> – Made with ❤️ and a lot of planning spreadsheets.</p>
+        </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    function adventureDashboard() {
+      return {
+        filter: 'all',
+        newIdea: { title: '', countryCode: '', description: '' },
+        trips: [
+          // Array dei viaggi: qui puoi aggiungere, modificare o rimuovere viaggi
+          // Lo status può essere: 'Completata', 'Pianificata', 'Idea'
+          { 
+            title: 'Vietnam', 
+            countryCode: '🇻🇳',
+            status: 'Pianificata', 
+            dates: '1-29 Agosto 2025',
+            description: '28 giorni di avventura asiatica, tra smart working, street food epico e la prova definitiva della nostra convivenza.',
+            image: 'https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+            link: 'vietnam.html' 
+          },
+          { 
+            title: 'Belgrado', 
+            countryCode: '🇷🇸',
+            status: 'Completata', 
+            dates: '11 Giorni - Giugno 2024',
+            description: 'Il nostro primo test di convivenza e workation. Un successo che ha dato il via a tutto il progetto.',
+            image: 'https://images.unsplash.com/photo-1608269735652-3298a06a4345?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+            link: 'belgrado.html' 
+          },
+           { 
+            title: 'Giappone', 
+            countryCode: '🇯🇵',
+            status: 'Idea', 
+            dates: 'Primavera 2026?',
+            description: 'Sushi, templi, tecnologia e la fioritura dei ciliegi. Una workation tra tradizione e futuro.',
+            image: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+            link: '#' 
+          },
+        ],
+        // Funzione per filtrare i viaggi
+        filteredTrips() {
+          if (this.filter === 'all') {
+            return this.trips;
+          }
+          return this.trips.filter(trip => trip.status === this.filter);
+        },
+        // Funzione per aggiungere una nuova idea
+        addIdea() {
+          if (!this.newIdea.title || !this.newIdea.description) {
+              alert('Compila tutti i campi per aggiungere un\'idea!');
+              return;
+          }
+          this.trips.unshift({ // unshift la aggiunge all'inizio della lista
+              title: this.newIdea.title,
+              countryCode: this.newIdea.countryCode,
+              status: 'Idea',
+              dates: 'Data da definire...',
+              description: this.newIdea.description,
+              image: 'https://images.unsplash.com/photo-1534430480872-740462a4e2b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80', // Immagine placeholder per le idee
+              link: '#'
+          });
+          // Reset del form
+          this.newIdea = { title: '', countryCode: '', description: '' };
+          // Scrolla alla sezione destinazioni per vedere la nuova card
+          document.getElementById('destinazioni').scrollIntoView({behavior: 'smooth'});
+          this.filter = 'Idea'; // Imposta il filtro su 'Idea' per mostrare subito la nuova card
+        },
+        // Calcola le statistiche
+        get stats() {
+            return {
+                completed: this.trips.filter(t => t.status === 'Completata').length,
+                planned: this.trips.filter(t => t.status === 'Pianificata').length,
+                ideas: this.trips.filter(t => t.status === 'Idea').length,
+                countries: [...new Set(this.trips.filter(t => t.status !== 'Idea').map(t => t.countryCode))].length
+            }
+        }
+      }
+    }
   </script>
 </body>
 </html>
