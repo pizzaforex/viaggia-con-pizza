@@ -13,12 +13,8 @@
         
         body { font-family: 'Inter', sans-serif; }
         
-        .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
         .vietnam-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0d9488 0%, #065f46 100%); /* Teal to Emerald Gradient */
         }
         
         .card-hover {
@@ -59,10 +55,10 @@
             position: absolute;
             width: 60px;
             height: 80px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             animation: floatUp 8s ease-in-out infinite;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
         
         @keyframes float {
@@ -81,9 +77,9 @@
         }
         
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(103, 126, 234, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(103, 126, 234, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(103, 126, 234, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.7); } /* Teal Pulse */
+            70% { box-shadow: 0 0 0 10px rgba(13, 148, 136, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0); }
         }
         
         .parallax-bg {
@@ -98,9 +94,9 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-slate-50 text-gray-800">
     <!-- Hero Section -->
-    <section class="hero-gradient text-white relative overflow-hidden min-h-screen flex items-center vietnam-pattern">
+    <section class="vietnam-gradient text-white relative overflow-hidden min-h-screen flex items-center vietnam-pattern">
         <div class="floating-elements">
             <div class="floating-lantern top-10 left-10" style="animation-delay: 0s;"></div>
             <div class="floating-lantern top-32 right-20" style="animation-delay: 2s;"></div>
@@ -112,13 +108,13 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center">
                 <div class="mb-6">
-                    <i class="fas fa-torii-gate text-6xl text-yellow-200 mb-4 drop-shadow-lg" aria-hidden="true"></i>
+                    <i class="fas fa-torii-gate text-6xl text-amber-200 mb-4 drop-shadow-lg" aria-hidden="true"></i>
                 </div>
                 <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight drop-shadow-lg">
                     Pizza & Parmi
-                    <span class="block text-4xl md:text-5xl font-light text-pink-200 drop-shadow">Vietnam Epic Adventure</span>
+                    <span class="block text-4xl md:text-5xl font-light text-emerald-200 drop-shadow">Vietnam Epic Adventure</span>
                 </h1>
-                <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed drop-shadow">
+                <p class="text-xl md:text-2xl mb-8 text-slate-100 max-w-3xl mx-auto leading-relaxed drop-shadow">
                     28 giorni nell'Estremo Oriente: Văn Giang diventa il nostro quartier generale per l'esperienza 
                     workation definitiva. Hanoi, street food e convivenza H24 in salsa vietnamita! 🏮💻❤️
                 </p>
@@ -137,7 +133,7 @@
                     </div>
                 </div>
                 <button id="btn-scopri" onclick="document.getElementById('dettagli').scrollIntoView({behavior: 'smooth'})" 
-                        class="pulse-button bg-white text-indigo-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                        class="pulse-button bg-white text-teal-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl">
                     <i class="fas fa-plane-departure mr-2" aria-hidden="true"></i>
                     Scopri l'Avventura Asiatica
                 </button>
@@ -154,36 +150,36 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="card-hover bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl shadow-lg">
+                <div class="card-hover bg-slate-50 p-8 rounded-2xl shadow-lg border border-slate-100">
                     <div class="text-center">
-                        <div class="bg-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <div class="bg-teal-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i class="fas fa-building text-white text-2xl" aria-hidden="true"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Eco-Living nel Verde 🌿</h3>
                         <p class="text-gray-600 mb-4">Appartamento nel centro di Ecopark: 2 camere, 2 bagni, piscina condominiale e natura ovunque. Co-working space incluso!</p>
-                        <div class="text-red-600 font-semibold">Solo €26/notte a testa!</div>
+                        <div class="text-teal-600 font-semibold">Solo €26/notte a testa!</div>
                     </div>
                 </div>
                 
-                <div class="card-hover bg-gradient-to-br from-green-50 to-emerald-100 p-8 rounded-2xl shadow-lg">
+                <div class="card-hover bg-slate-50 p-8 rounded-2xl shadow-lg border border-slate-100">
                     <div class="text-center">
-                        <div class="bg-emerald-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <div class="bg-amber-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i class="fas fa-bowl-food text-white text-2xl" aria-hidden="true"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Street Food Paradise 🍜</h3>
                         <p class="text-gray-600 mb-4">Pho a colazione, banh mi a pranzo, bun cha a cena. Parmi scoprirà che il cibo vietnamita > tutto!</p>
-                        <div class="text-emerald-600 font-semibold">€5-10 per pasti stellati!</div>
+                        <div class="text-amber-600 font-semibold">€5-10 per pasti stellati!</div>
                     </div>
                 </div>
                 
-                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl shadow-lg">
+                <div class="card-hover bg-slate-50 p-8 rounded-2xl shadow-lg border border-slate-100">
                     <div class="text-center">
-                        <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <div class="bg-rose-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i class="fas fa-motorcycle text-white text-2xl" aria-hidden="true"></i>
                         </div>
                         <h3 class="text-2xl font-bold text-gray-800 mb-4">Adventure Level: Expert 🏍️</h3>
                         <p class="text-gray-600 mb-4">28 giorni insieme in Asia = relationship final boss. Se superiamo questo, possiamo conquistare il mondo!</p>
-                        <div class="text-purple-600 font-semibold">Achievement unlocked: ❤️ ∞</div>
+                        <div class="text-rose-600 font-semibold">Achievement unlocked: ❤️ ∞</div>
                     </div>
                 </div>
             </div>
@@ -191,13 +187,13 @@
     </section>
 
     <!-- Accommodation Section -->
-    <section id="alloggio" class="py-20 bg-gradient-to-r from-red-50 to-orange-50">
+    <section id="alloggio" class="py-20 bg-slate-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Il Nostro Rifugio in Asia</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     An House nel cuore di Ecopark: appartamento moderno con 2 camere, 2 bagni e accesso a tutti 
-                    i servizi del complesso verde più bello del Vietnam! <a href="https://www.airbnb.it/rooms/1266670685276187937" target="_blank" class="text-red-600 underline font-semibold hover:text-red-700">Guarda su Airbnb</a>
+                    i servizi del complesso verde più bello del Vietnam! <a href="https://www.airbnb.it/rooms/1266670685276187937" target="_blank" class="text-amber-600 underline font-semibold hover:text-amber-700">Guarda su Airbnb</a>
                 </p>
             </div>
             <ul class="text-left text-gray-700 list-disc list-inside mb-6 max-w-3xl mx-auto">
@@ -209,7 +205,7 @@
                 <li>Kayak disponibile per esplorare i laghi di Ecopark</li>
             </ul>
             <div class="text-center mb-10">
-                <a href="https://www.airbnb.it/rooms/1266670685276187937" target="_blank" class="inline-block bg-red-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-red-700 transition hover:shadow-xl">Esplora l'Appartamento su Airbnb</a>
+                <a href="https://www.airbnb.it/rooms/1266670685276187937" target="_blank" class="inline-block bg-amber-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-amber-700 transition hover:shadow-xl">Esplora l'Appartamento su Airbnb</a>
             </div>
             <div x-data="{ photos: [
                 'https://i.imgur.com/zBE4BB9.jpg',
@@ -236,7 +232,7 @@
                 </div>
                 <div class="grid grid-cols-4 sm:grid-cols-6 gap-2 sm:gap-3">
                     <template x-for="(photo, index) in photos" :key="index">
-                        <img :src="photo" @click="current = index" :class="{'ring-2 ring-red-500': current === index}" class="cursor-pointer rounded-lg shadow hover:opacity-80 transition-opacity object-cover h-16 sm:h-20 w-full">
+                        <img :src="photo" @click="current = index" :class="{'ring-2 ring-amber-500': current === index}" class="cursor-pointer rounded-lg shadow hover:opacity-80 transition-opacity object-cover h-16 sm:h-20 w-full">
                     </template>
                 </div>
             </div>
@@ -244,7 +240,7 @@
     </section>
 
     <!-- Itinerary Section -->
-    <section class="py-20 bg-gradient-to-r from-gray-50 to-red-50">
+    <section class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">28 Giorni di Vietnam Magic</h2>
@@ -252,69 +248,69 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
+                    <div class="h-48 bg-teal-500 flex items-center justify-center">
                         <i class="fas fa-landmark text-white text-4xl" aria-hidden="true"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3">Temple of Literature ☕📚</h3>
                         <p class="text-gray-600 mb-3">Prima università del Vietnam (1070!). Perfect spot per le call mattutine nel cortile zen. Parmi studierà il Confucianesimo tra una riunione e l'altra!</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Temple+of+Literature+Hanoi" target="_blank" class="text-red-600 underline text-sm font-medium hover:text-red-700">📍 Apri in Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Temple+of+Literature+Hanoi" target="_blank" class="text-amber-600 underline text-sm font-medium hover:text-amber-700">📍 Apri in Google Maps</a>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
+                    <div class="h-48 bg-cyan-500 flex items-center justify-center">
                         <i class="fas fa-water text-white text-4xl" aria-hidden="true"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3">West Lake Sunset Calls 🌅</h3>
                         <p class="text-gray-600 mb-3">17km di lungolago perfetto per walking meetings. Pizza prometterà di non cadere nel lago durante le conference call!</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=West+Lake+Hanoi" target="_blank" class="text-red-600 underline text-sm font-medium hover:text-red-700">📍 Apri in Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=West+Lake+Hanoi" target="_blank" class="text-amber-600 underline text-sm font-medium hover:text-amber-700">📍 Apri in Google Maps</a>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-br from-red-400 to-pink-500 flex items-center justify-center">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
+                    <div class="h-48 bg-amber-500 flex items-center justify-center">
                         <i class="fas fa-utensils text-white text-4xl" aria-hidden="true"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3">Old Quarter Food Hunt 🍜</h3>
                         <p class="text-gray-600 mb-3">36 strade, 1000 sapori! Pho a colazione, banh mi a pranzo, bun cha a cena. Parmi diventerà una food blogger vietnamita!</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Hanoi+Old+Quarter" target="_blank" class="text-red-600 underline text-sm font-medium hover:text-red-700">📍 Apri in Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Hanoi+Old+Quarter" target="_blank" class="text-amber-600 underline text-sm font-medium hover:text-amber-700">📍 Apri in Google Maps</a>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
+                    <div class="h-48 bg-slate-600 flex items-center justify-center">
                         <i class="fas fa-train text-white text-4xl" aria-hidden="true"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3">Train Street Instagramming 📸</h3>
                         <p class="text-gray-600 mb-3">Il treno passa a 30cm dal nostro caffè vietnamita. Pizza farà il fotografo, Parmi la modella. Content creation level: expert!</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Hanoi+Train+Street" target="_blank" class="text-red-600 underline text-sm font-medium hover:text-red-700">📍 Apri in Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Hanoi+Train+Street" target="_blank" class="text-amber-600 underline text-sm font-medium hover:text-amber-700">📍 Apri in Google Maps</a>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
+                    <div class="h-48 bg-emerald-600 flex items-center justify-center">
                         <i class="fas fa-ship text-white text-4xl" aria-hidden="true"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3">Ha Long Bay Weekend 🚢</h3>
                         <p class="text-gray-600 mb-3">Crociera tra le 1600 isole! Laptop chiusi per 48h, kayak e grotte calcaree. Pizza & Parmi modalità: full explorer!</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Ha+Long+Bay+Vietnam" target="_blank" class="text-red-600 underline text-sm font-medium hover:text-red-700">📍 Apri in Google Maps</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Ha+Long+Bay+Vietnam" target="_blank" class="text-amber-600 underline text-sm font-medium hover:text-amber-700">📍 Apri in Google Maps</a>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
-                    <div class="h-48 bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover border border-slate-100">
+                    <div class="h-48 bg-yellow-700 flex items-center justify-center">
                         <i class="fas fa-coffee text-white text-4xl" aria-hidden="true"></i>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-3">Egg Coffee Revolution ☕🥚</h3>
                         <p class="text-gray-600 mb-3">Caffè con tuorlo montato inventato ad Hanoi! Working session nei café storici. Parmi convertita al culto dell'egg coffee!</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Giang+Cafe+Hanoi" target="_blank" class="text-red-600 underline text-sm font-medium hover:text-red-700">📍 Prova al Giảng Café</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Giang+Cafe+Hanoi" target="_blank" class="text-amber-600 underline text-sm font-medium hover:text-amber-700">📍 Prova al Giảng Café</a>
                     </div>
                 </div>
             </div>
@@ -322,7 +318,7 @@
     </section>
 
     <!-- Food & Culture Section -->
-    <section id="cibo" class="py-20 bg-gradient-to-r from-yellow-50 to-orange-50">
+    <section id="cibo" class="py-20 bg-gradient-to-r from-amber-50 to-orange-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Street Food & Culture Immersion</h2>
@@ -335,7 +331,7 @@
                     <div class="p-6">
                         <h3 class="text-lg font-bold mb-2">Phở Paradise</h3>
                         <p class="text-gray-600 text-sm mb-2">LA zuppa vietnamita: brodo di ossa, noodles, manzo. Colazione dei campioni!</p>
-                        <p class="text-red-600 font-semibold text-sm">€2-3 a ciotola = mind blown 🤯</p>
+                        <p class="text-amber-600 font-semibold text-sm">€2-3 a ciotola = mind blown 🤯</p>
                     </div>
                 </div>
                 
@@ -344,7 +340,7 @@
                     <div class="p-6">
                         <h3 class="text-lg font-bold mb-2">Bánh Mì Magic</h3>
                         <p class="text-gray-600 text-sm mb-2">Baguette + paté + maiale + verdure fermentate = paradiso!</p>
-                        <p class="text-red-600 font-semibold text-sm">€1.50 per il miglior panino ever!</p>
+                        <p class="text-amber-600 font-semibold text-sm">€1.50 per il miglior panino ever!</p>
                     </div>
                 </div>
                 
@@ -353,7 +349,7 @@
                     <div class="p-6">
                         <h3 class="text-lg font-bold mb-2">Bún Chả Obama</h3>
                         <p class="text-gray-600 text-sm mb-2">Il piatto che Obama mangiò con Bourdain. Maiale grigliato + noodles = amore!</p>
-                        <p class="text-red-600 font-semibold text-sm">€3 per sentirsi presidenziali</p>
+                        <p class="text-amber-600 font-semibold text-sm">€3 per sentirsi presidenziali</p>
                     </div>
                 </div>
                 
@@ -362,7 +358,7 @@
                     <div class="p-6">
                         <h3 class="text-lg font-bold mb-2">Cà Phê Trứng</h3>
                         <p class="text-gray-600 text-sm mb-2">Caffè + tuorlo montato + latte condensato. Trust Pizza on this!</p>
-                        <p class="text-red-600 font-semibold text-sm">€2 per la rivoluzione caffeina</p>
+                        <p class="text-amber-600 font-semibold text-sm">€2 per la rivoluzione caffeina</p>
                     </div>
                 </div>
             </div>
@@ -373,10 +369,19 @@
                     <div>
                         <h4 class="font-semibold text-gray-700 mb-3">Hidden Gems:</h4>
                         <ul class="space-y-2 text-gray-600 text-sm">
-                            <li>☕ <strong>Giảng Café</strong> - L'originale egg coffee dal 1946 <a href="https://www.google.com/maps/search/?api=1&query=Giang+Cafe+Hanoi" target="_blank" class="text-red-600 underline">Maps</a></li>
-                            <li>🍲 <strong>Phở Thìn Bờ Hồ</strong> - Pho con aglio fritto 🤤 <a href="https://www.google.com/maps/search/?api=1&query=Pho+Thin+Bo+Ho+Hanoi" target="_blank" class="text-red-600 underline">Maps</a></li>
-                            <li>🌮 <strong>Trung Yên Alley</strong> - Street food segreto dei locals <a href="https://www.google.com/maps/search/?api=1&query=Trung+Yen+Alley+Hanoi" target="_blank" class="text-red-600 underline">Maps</a></li>
-                            <li>🍢 <strong>Tong Duy Tan Street</strong> - Food paradise notturno <a href="https://www.google.com/maps/search/?api=1&query=Tong+Duy+Tan+Street+Hanoi" target="_blank" class="text-red-600 underline">Maps</a></li>
+                            <li>☕ <strong>Giảng Café</strong> - L'originale egg coffee dal 1946 <a href="https://www.google.com/maps/search/?api=1&query=Giang+Cafe+Hanoi" target="_blank" class="text-amber-600 underline">Maps</a></li>
+                            <li>🍲 <strong>Phở Thìn Bờ Hồ</strong> - Pho con aglio fritto 🤤 <a href="https://www.google.com/maps/search/?api=1&query=Pho+Thin+Bo+Ho+Hanoi" target="_blank" class="text-amber-600 underline">Maps</a></li>
+                            <li>🌮 <strong>Trung Yên Alley</strong> - Street food segreto dei locals <a href="https://www.google.com/maps/search/?api=1&query=Trung+Yen+Alley+Hanoi" target="_blank" class="text-amber-600 underline">Maps</a></li>
+                            <li>🍢 <strong>Tong Duy Tan Street</strong> - Food paradise notturno <a href="https://www.google.com/maps/search/?api=1&query=Tong+Duy+Tan+Street+Hanoi" target="_blank" class="text-amber-600 underline">Maps</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-3">Old Quarter Classics:</h4>
+                        <ul class="space-y-2 text-gray-600 text-sm">
+                            <li>🍜 <strong>Phở Gia Truyền Bát Đàn</strong> - Code alle 6AM, worth it! <a href="https://www.google.com/maps/search/?api=1&query=Pho+Gia+Truyen+Bat+Dan+Hanoi" target="_blank" class="text-amber-600 underline">Maps</a></li>
+                            <li>🥖 <strong>Bánh Mì 25</strong> - Il re dei banh mi di Hanoi <a href="https://www.google.com/maps/search/?api=1&query=Banh+Mi+25+Hanoi" target="_blank" class="text-amber-600 underline">Maps</a></li>
+                            <li>🍖 <strong>Bún Chả Đắc Kim</strong> - Michelin-approved! <a href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+Dac+Kim+Hanoi" target="_blank" class="text-amber-600 underline">Maps</a></li>
+                            <li>🥟 <strong>Bánh Cuốn Bà Hạnh</strong> - Rice rolls da sogno <a href="https://www.google.com/maps/search/?api=1&query=Banh+Cuon+Ba+Hanh+Hanoi" target="_blank" class="text-amber-600 underline">Maps</a></li>
                         </ul>
                     </div>
                 </div>
@@ -385,7 +390,7 @@
     </section>
 
     <!-- Interactive Map Section -->
-    <section id="mappa" class="py-20 bg-blue-50">
+    <section id="mappa" class="py-20 bg-slate-100">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">La Nostra Base Operativa</h2>
@@ -417,7 +422,7 @@
                 <iframe src="https://maps.google.com/maps?q=Ecopark+Van+Giang+Hung+Yen+Vietnam&hl=it&z=13&output=embed" class="absolute top-0 left-0 w-full h-full border-0" allowfullscreen loading="lazy"></iframe>
             </div>
             <p class="text-center mt-6">
-                <a href="https://www.google.com/maps/search/?api=1&query=Ecopark+Van+Giang+Hung+Yen+Vietnam" target="_blank" class="text-red-600 underline font-semibold hover:text-red-700 transition-colors">Apri su Google Maps</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Ecopark+Van+Giang+Hung+Yen+Vietnam" target="_blank" class="text-amber-600 underline font-semibold hover:text-amber-700 transition-colors">Apri su Google Maps</a>
             </p>
         </div>
     </section>
@@ -434,36 +439,36 @@
                 <div class="flex justify-center mb-8">
                     <div class="bg-gray-100 p-1 rounded-full shadow-inner">
                         <button @click="activeTab = 'economy'" 
-                                :class="activeTab === 'economy' ? 'bg-white shadow-md text-red-600' : 'text-gray-600 hover:text-gray-800'"
+                                :class="activeTab === 'economy' ? 'bg-white shadow-md text-amber-600' : 'text-gray-600 hover:text-gray-800'"
                                 class="px-4 sm:px-6 py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base">
                             <i class="fas fa-piggy-bank mr-2" aria-hidden="true"></i>Budget Smart
                         </button>
                         <button @click="activeTab = 'comfort'" 
-                                :class="activeTab === 'comfort' ? 'bg-white shadow-md text-emerald-600' : 'text-gray-600 hover:text-gray-800'"
+                                :class="activeTab === 'comfort' ? 'bg-white shadow-md text-teal-600' : 'text-gray-600 hover:text-gray-800'"
                                 class="px-4 sm:px-6 py-3 rounded-full font-semibold transition-all duration-300 text-sm sm:text-base">
                             <i class="fas fa-crown mr-2" aria-hidden="true"></i>Comfort Plus
                         </button>
                     </div>
                 </div>
                 
-                <div x-show="activeTab === 'economy'" x-transition class="bg-gradient-to-br from-red-50 to-orange-50 p-6 sm:p-8 rounded-2xl shadow-xl">
+                <div x-show="activeTab === 'economy'" x-transition class="bg-gradient-to-br from-amber-50 to-orange-100 p-6 sm:p-8 rounded-2xl shadow-xl">
                     <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Opzione "Backpacker Deluxe" 🎒✨</h3>
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div>
                             <div class="space-y-4">
-                                <div class="flex justify-between items-center py-3 border-b border-red-200">
+                                <div class="flex justify-between items-center py-3 border-b border-amber-200">
                                     <span class="text-gray-700 text-sm sm:text-base">Appartamento Ecopark (28 notti)</span>
                                     <span class="font-semibold text-gray-800 text-sm sm:text-base">€738</span>
                                 </div>
-                                <div class="flex justify-between items-center py-3 border-b border-red-200">
+                                <div class="flex justify-between items-center py-3 border-b border-amber-200">
                                     <span class="text-gray-700 text-sm sm:text-base">Voli A/R Venezia-Hanoi</span>
                                     <span class="font-semibold text-gray-800 text-sm sm:text-base">€1.200</span>
                                 </div>
-                                <div class="flex justify-between items-center py-3 border-b border-red-200">
+                                <div class="flex justify-between items-center py-3 border-b border-amber-200">
                                     <span class="text-gray-700 text-sm sm:text-base">Trasporti locali (taxi, Grab)</span>
                                     <span class="font-semibold text-gray-800 text-sm sm:text-base">€200</span>
                                 </div>
-                                <div class="flex justify-between items-center py-3 border-b border-red-200">
+                                <div class="flex justify-between items-center py-3 border-b border-amber-200">
                                     <span class="text-gray-700 text-sm sm:text-base">Street food & ristoranti</span>
                                     <span class="font-semibold text-gray-800 text-sm sm:text-base">€500</span>
                                 </div>
@@ -471,33 +476,33 @@
                         </div>
                         <div class="flex flex-col justify-center mt-6 md:mt-0">
                             <div class="bg-white p-6 rounded-xl text-center shadow-lg">
-                                <div class="text-3xl font-bold text-red-600 mb-2">€2.640</div>
+                                <div class="text-3xl font-bold text-amber-600 mb-2">€2.640</div>
                                 <div class="text-gray-600 mb-4 text-sm">Per Pizza & Parmi Adventures Ltd.</div>
-                                <div class="text-lg text-red-600 font-semibold">€47 a testa/giorno</div>
+                                <div class="text-lg text-amber-600 font-semibold">€47 a testa/giorno</div>
                                 <div class="text-xs text-gray-500 mt-2">Include: parcheggio VCE + extras! 🎁</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div x-show="activeTab === 'comfort'" x-transition class="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 sm:p-8 rounded-2xl shadow-xl">
+                <div x-show="activeTab === 'comfort'" x-transition class="bg-gradient-to-br from-emerald-50 to-teal-100 p-6 sm:p-8 rounded-2xl shadow-xl">
                     <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Opzione "Digital Nomad Premium" 💎</h3>
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div>
                             <div class="space-y-4">
-                                <div class="flex justify-between items-center py-3 border-b border-emerald-200">
+                                <div class="flex justify-between items-center py-3 border-b border-teal-200">
                                     <span class="text-gray-700 text-sm sm:text-base">Appartamento Ecopark (28 notti)</span>
                                     <span class="font-semibold text-gray-800 text-sm sm:text-base">€738</span>
                                 </div>
-                                <div class="flex justify-between items-center py-3 border-b border-emerald-200">
+                                <div class="flex justify-between items-center py-3 border-b border-teal-200">
                                     <span class="text-gray-700 text-sm sm:text-base">Voli premium con bagaglio extra</span>
                                     <span class="font-semibold text-gray-800 text-sm sm:text-base">€1.600</span>
                                 </div>
-                                <div class="flex justify-between items-center py-3 border-b border-emerald-200">
+                                <div class="flex justify-between items-center py-3 border-b border-teal-200">
                                     <span class="text-gray-700 text-sm sm:text-base">Driver privato + weekend trips</span>
                                     <span class="font-semibold text-gray-800 text-sm sm:text-base">€500</span>
                                 </div>
-                                <div class="flex justify-between items-center py-3 border-b border-emerald-200">
+                                <div class="flex justify-between items-center py-3 border-b border-teal-200">
                                     <span class="text-gray-700 text-sm sm:text-base">Dining experiences & spa</span>
                                     <span class="font-semibold text-gray-800 text-sm sm:text-base">€800</span>
                                 </div>
@@ -505,9 +510,9 @@
                         </div>
                         <div class="flex flex-col justify-center mt-6 md:mt-0">
                             <div class="bg-white p-6 rounded-xl text-center shadow-lg">
-                                <div class="text-3xl font-bold text-emerald-600 mb-2">€3.640</div>
+                                <div class="text-3xl font-bold text-teal-600 mb-2">€3.640</div>
                                 <div class="text-gray-600 mb-4 text-sm">Per Pizza & Parmi Premium Experience</div>
-                                <div class="text-lg text-emerald-600 font-semibold">€65 a testa/giorno</div>
+                                <div class="text-lg text-teal-600 font-semibold">€65 a testa/giorno</div>
                                 <div class="text-xs text-gray-500 mt-2">Con Ha Long Bay cruise! 🚢</div>
                             </div>
                         </div>
@@ -515,7 +520,7 @@
                 </div>
             </div>
             
-            <div class="mt-12 bg-gradient-to-r from-orange-50 to-yellow-50 p-8 rounded-2xl max-w-3xl mx-auto shadow-lg">
+            <div class="mt-12 bg-gradient-to-r from-orange-100 to-amber-100 p-8 rounded-2xl max-w-3xl mx-auto shadow-lg">
                 <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">💡 Pizza's Smart Tips per Risparmiare</h3>
                 <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
                     <ul class="space-y-2">
@@ -536,7 +541,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-slate-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">FAQ: Vietnam Edition 🇻🇳</h2>
@@ -546,7 +551,7 @@
             <div class="max-w-3xl mx-auto space-y-4" x-data="{ activeAccordion: null }">
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <button @click="activeAccordion = activeAccordion === 1 ? null : 1" 
-                            class="w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200">
+                            class="w-full text-left p-6 focus:outline-none hover:bg-slate-50 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <h3 class="text-lg font-semibold text-gray-800">Parmi: "28 giorni in Asia?! Pizza, sei impazzito?" 😱</h3>
                             <i class="fas fa-chevron-down transform transition-transform duration-300" 
@@ -562,7 +567,7 @@
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <button @click="activeAccordion = activeAccordion === 2 ? null : 2" 
-                            class="w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200">
+                            class="w-full text-left p-6 focus:outline-none hover:bg-slate-50 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <h3 class="text-lg font-semibold text-gray-800">Parmi: "Ma il Wi-Fi? Le call con l'Italia? Il fuso?" ⏰</h3>
                             <i class="fas fa-chevron-down transform transition-transform duration-300" 
@@ -578,7 +583,7 @@
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <button @click="activeAccordion = activeAccordion === 3 ? null : 3" 
-                            class="w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200">
+                            class="w-full text-left p-6 focus:outline-none hover:bg-slate-50 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <h3 class="text-lg font-semibold text-gray-800">Parmi: "E se mi viene nostalgia della pasta?" 🍝</h3>
                             <i class="fas fa-chevron-down transform transition-transform duration-300" 
@@ -594,7 +599,7 @@
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <button @click="activeAccordion = activeAccordion === 4 ? null : 4" 
-                            class="w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200">
+                            class="w-full text-left p-6 focus:outline-none hover:bg-slate-50 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <h3 class="text-lg font-semibold text-gray-800">Parmi: "Pizza, dimmi la verità: quanto hai pianificato?" 📊</h3>
                             <i class="fas fa-chevron-down transform transition-transform duration-300" 
@@ -610,7 +615,7 @@
                 
                 <div class="bg-white rounded-lg shadow-md overflow-hidden">
                     <button @click="activeAccordion = activeAccordion === 5 ? null : 5" 
-                            class="w-full text-left p-6 focus:outline-none hover:bg-gray-50 transition-colors duration-200">
+                            class="w-full text-left p-6 focus:outline-none hover:bg-slate-50 transition-colors duration-200">
                         <div class="flex justify-between items-center">
                             <h3 class="text-lg font-semibold text-gray-800">Parmi: "Ok Pizza, I'm in! Ma... perché proprio il Vietnam?" ❤️</h3>
                             <i class="fas fa-chevron-down transform transition-transform duration-300" 
@@ -636,29 +641,29 @@
         
         <div class="container mx-auto px-6 text-center relative z-10">
             <h2 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Ready for 28 Days in Paradise, Parmi? 🏝️💻</h2>
-            <p class="text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto drop-shadow">
+            <p class="text-xl md:text-2xl mb-12 text-slate-100 max-w-3xl mx-auto drop-shadow">
                 Dal 1° al 29 agosto 2025: workation estrema, street food epico, e la prova definitiva 
                 che Pizza & Parmi possono conquistare il mondo... partendo dal Vietnam! 🌏
             </p>
             
             <div class="flex flex-col md:flex-row gap-4 md:gap-6 justify-center items-center">
-                <button id="cta-book" class="pulse-button bg-white text-indigo-600 px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                <button id="cta-book" class="pulse-button bg-white text-teal-700 px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl hover:bg-slate-100 transition-all duration-300 transform hover:scale-105 shadow-xl">
                     <i class="fas fa-passport mr-2 md:mr-3" aria-hidden="true"></i>
                     Book It, Pizza! Let's Go! 🚀
                 </button>
                 
-                <button id="cta-plan" class="bg-transparent border-2 border-white text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl hover:bg-white hover:text-indigo-600 transition-all duration-300 transform hover:scale-105">
+                <button id="cta-plan" class="bg-transparent border-2 border-white text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl hover:bg-white hover:text-teal-700 transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-map-marked-alt mr-2 md:mr-3" aria-hidden="true"></i>
                     28-Day Itinerary PDF 📍
                 </button>
                 
-                <button id="cta-video" class="bg-transparent border-2 border-white text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl hover:bg-white hover:text-indigo-600 transition-all duration-300 transform hover:scale-105">
+                <button id="cta-video" class="bg-transparent border-2 border-white text-white px-8 md:px-10 py-3 md:py-4 rounded-full font-bold text-lg md:text-xl hover:bg-white hover:text-teal-700 transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-video mr-2 md:mr-3" aria-hidden="true"></i>
                     Video Call Pizza Now! 📞
                 </button>
             </div>
             
-            <div class="mt-12 text-blue-100">
+            <div class="mt-12 text-slate-100">
                 <p class="text-base md:text-lg drop-shadow">🍕 CEO Pizza: +39 333 ASIA-LOVE | ✉️ pizza@vietnamadventure2025.love</p>
                 <p class="text-sm mt-2 drop-shadow">Pizza & Parmi Ventures - Taking Italian Love to Asian Streets! 🛵❤️🍜</p>
             </div>
@@ -666,7 +671,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-slate-900 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div>
@@ -899,13 +904,4 @@ ECOPARK AMENITIES:
         });
     </script>
 </body>
-</html>ibold text-gray-700 mb-3">Old Quarter Classics:</h4>
-                        <ul class="space-y-2 text-gray-600 text-sm">
-                            <li>🍜 <strong>Phở Gia Truyền Bát Đàn</strong> - Code alle 6AM, worth it! <a href="https://www.google.com/maps/search/?api=1&query=Pho+Gia+Truyen+Bat+Dan+Hanoi" target="_blank" class="text-red-600 underline">Maps</a></li>
-                            <li>🥖 <strong>Bánh Mì 25</strong> - Il re dei banh mi di Hanoi <a href="https://www.google.com/maps/search/?api=1&query=Banh+Mi+25+Hanoi" target="_blank" class="text-red-600 underline">Maps</a></li>
-                            <li>🍖 <strong>Bún Chả Đắc Kim</strong> - Michelin-approved! <a href="https://www.google.com/maps/search/?api=1&query=Bun+Cha+Dac+Kim+Hanoi" target="_blank" class="text-red-600 underline">Maps</a></li>
-                            <li>🥟 <strong>Bánh Cuốn Bà Hạnh</strong> - Rice rolls da sogno <a href="https://www.google.com/maps/search/?api=1&query=Banh+Cuon+Ba+Hanh+Hanoi" target="_blank" class="text-red-600 underline">Maps</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-sem
+</html>
